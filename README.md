@@ -27,7 +27,7 @@ Remember to use the AI Assistant, linked above!
     - `name`:
         - a string containing a name.
 - *logic and return values*
-    - the function should take the name parameter and insert into this message:
+    - the function should take the name parameter and insert it into this message and print it:
         - `Hello <name>, welcome to IS 303!`
     - For example, if I provided “Jacob” as the argument, it should print:
         - `Hello Jacob, welcome to IS 303!`
