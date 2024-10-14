@@ -28,6 +28,7 @@ def detect_module(solution_module, student_module):
     else:
         return "PATH NOT FOUND"
 
+#default_module_to_test = "a6_function_smorgasbord"#detect_module(solution_module, student_module)
 default_module_to_test = detect_module(solution_module, student_module)
 functions_module_to_test = detect_module(solution_functions_module, student_functions_module)
 

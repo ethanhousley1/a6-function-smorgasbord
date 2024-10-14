@@ -54,7 +54,9 @@ def test_09_calculate_total(test_cases):
                                 f"However, your function is returning this value (ignoring capitalization / punctuation):\n\n"
                                 f"{actual_result}\n\n"
                                 f"Make sure your function is returning a value and that the logic matches "
-                                f"what the instructions say."),
+                                f"what the instructions say. If the message above says your function is returning \"None\" when it shouldn't, "
+                                f"that means your function likely doesn't have a return statement. Make sure you are returning "
+                                f"a value, not just printing it out directly in the function."),
                 test_case=test_case,
             ) 
 

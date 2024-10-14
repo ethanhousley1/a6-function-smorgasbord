@@ -160,12 +160,12 @@ Remember to use the AI Assistant, linked above!
     - The function should calculate the total price (`price * quantity`) and then apply a discount. 
     - If the total price is equal to or below the `threshold_total`, then the discount applied would just be the `discount_percent`.
     - If the total price is above the `threshold_total`, then the applied discount should be the `discount_percent + bonus_discount`.
-    - Return the total price after the discount is applied.
+    - Return the total price, rounded to the second decimal, after the discount is applied.
     - You can reference the table below for example inputs and outputs. In the first row, the bonus_discount is not applied since it doesn’t reach the threshold_total, but in the second row, the bonus_discount is applied since the price*quantity is over 100.
     - | **Price** | **Quantity** | **Discount_percent** | **Threshold_total** | **Bonus_discount** | **Returned value** |
         |-----------|--------------|----------------------|---------------------|--------------------|--------------------|
         | 5         | 15           | 0.1                  | 100                 | 0.02               | 67.5               |
-        | 5         | 25           | 0.1                  | 100                 | 0.02               | 110                |
+        | 5         | 25           | 0.1                  | 100                 | 0.02               | 110.0                |
 - *calling the function*:
     - In `a6_function_smorgasbord.py`, write a loop that runs 2 times. In each iteration, ask the user to input:
         - a `price`:
