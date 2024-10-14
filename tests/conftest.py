@@ -192,7 +192,7 @@ def _load_student_code_subprocess(queue, inputs, test_case, module_to_test, func
                 return next(input_iter)
             except StopIteration:
                 # Handle the case where there are more input() calls than provided inputs
-                return ''
+                raise
         
         # Prepare the global namespace for exec()
         globals_dict = {
@@ -258,6 +258,25 @@ def _load_student_code_subprocess(queue, inputs, test_case, module_to_test, func
         # Send back the results
         queue.put(('success', (captured_input_prompts, captured_output, module_globals, function_results)))
         
+    except StopIteration as e:
+        # Reset sys.stdout in case of exception
+        sys.stdout = old_stdout
+        sys.settrace(None)
+        # Send the exception back as a dictionary
+        exc_type, exc_value, exc_tb = sys.exc_info()
+        test_case_inputs = '\n'.join(test_case["inputs"])
+        exception_data = {
+            'type': type(e).__name__,
+            'message': (f"{str(e)}\n\nHOW TO FIX IT:\n\nThis error was very likely caused by your code asking for more input() calls than the test case expected. "
+                        f"To see where this is happening in your code, run your code and input THESE EXACT INPUTS IN THIS ORDER:\n\n"
+                        f"{test_case_inputs}\n\n"
+                        f"If, after entering those exact inputs in that order, your code asks for another input, THAT is the cause of this error. "
+                        f"Make it so your code doesn't ask for any more inputs after the last input entered. If you believe that is a mistake, please "
+                        f"reach out to your professor."),
+            'traceback': traceback.format_exception(exc_type, exc_value, exc_tb)
+        }
+        queue.put(('exception', exception_data))
+    
     except EOFError as e:
         # Reset sys.stdout in case of exception
         sys.stdout = old_stdout
@@ -607,19 +626,28 @@ def exception_message_for_students(exception_data, test_case):
     else:
         display_inputs_option = False
 
-    # Call pytest.fail with the formatted error message
-    pytest.fail(f"{format_error_message(
-        custom_message=(f"While trying to run the test, python ran into an error.\n\n"
-                        f"LOCATION OF ERROR:\n\n{error_location}\n"
-                        f"ERROR MESSAGE:\n{error_message}\n\n"
-                        f"HOW TO FIX IT:\n\n"
-                        f"If the error occurred in {default_module_to_test}.py or another .py file that you wrote, set a breakpoint at the location in that file where "
-                        f"the error occurred and see if you can repeat the error by running your code using the inputs for Test Case {test_case['id_test_case']}. "
-                        f"That should help you see what went wrong.\n\n"
-                        f"If the error occurred in a different file, reach out to your professor.\n\n"), 
-        test_case=test_case,
-        display_inputs=display_inputs_option
-        )}")
+    if error_type == "StopIteration":
+        pytest.fail(f"{format_error_message(
+            custom_message=(f"While trying to run the test, python ran into an error.\n\n"
+                            f"LOCATION OF ERROR:\n\n{error_location}\n"
+                            f"ERROR MESSAGE:\n{error_message}\n\n"), 
+            test_case=test_case,
+            display_inputs=display_inputs_option
+            )}")
+    else:
+        # Call pytest.fail with the formatted error message
+        pytest.fail(f"{format_error_message(
+            custom_message=(f"While trying to run the test, python ran into an error.\n\n"
+                            f"LOCATION OF ERROR:\n\n{error_location}\n"
+                            f"ERROR MESSAGE:\n{error_message}\n\n"
+                            f"HOW TO FIX IT:\n\n"
+                            f"If the error occurred in {default_module_to_test}.py or another .py file that you wrote, set a breakpoint at the location in that file where "
+                            f"the error occurred and see if you can repeat the error by running your code using the inputs for Test Case {test_case['id_test_case']}. "
+                            f"That should help you see what went wrong.\n\n"
+                            f"If the error occurred in a different file, reach out to your professor.\n\n"), 
+            test_case=test_case,
+            display_inputs=display_inputs_option
+            )}")
 
 def timeout_message_for_students(test_case):
     """
@@ -627,9 +655,15 @@ def timeout_message_for_students(test_case):
     I put this in a function just so there is one central place
     to edit the message if I change it in the future.
     """
+    test_case_inputs = test_case.get("inputs", "No inputs")
+    test_case_inputs = '\n'.join(test_case_inputs)
+
     return format_error_message(
                 custom_message=(f"You got a Timeout Error, meaning this test case didn't complete after {default_timeout_seconds} seconds. "
-                                f"Check out the inputs for Test Case {test_case["id_test_case"]}. Most likely, "
+                                f"The test timed out during test case {test_case["id_test_case"]}. To try and identify the problem, run your code like normal, but enter these EXACT inputs "
+                                f"in this order:\n\n"
+                                f"{test_case_inputs}\n\n"
+                                f"Most likely, "
                                 f"you wrote your code in a way that the inputs of this test case make it so your code never exits properly. "
                                 f"Double check the test case examples in the instructions and make sure your code isn't asking for additional "
                                 f"or fewer inputs than the test case expects.\n\n"),
