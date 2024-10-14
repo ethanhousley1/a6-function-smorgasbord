@@ -4,7 +4,7 @@ any @pytest.fixture created here is available to any other test file
 if they reference it as a parameter.
 '''
 
-import pytest, re, sys, os, json, traceback, multiprocessing, pickle, debugpy, inspect
+import pytest, re, sys, os, json, traceback, multiprocessing, pickle, inspect
 from io import StringIO
 
 
@@ -14,7 +14,7 @@ from io import StringIO
 
 # Enter the name of the file to be tested here, but leave out the .py file extention.
 solution_module = "a6_solution_function_smorgasbord"
-student_module = "a5_function_smorgasbord"
+student_module = "a6_function_smorgasbord"
 
 # for this test, there are 2 files, so adding 2 extra globals
 solution_functions_module = "a6_solution_my_functions"
@@ -33,11 +33,6 @@ functions_module_to_test = detect_module(solution_functions_module, student_func
 
 # default per-test-case timeout amount in seconds:
 default_timeout_seconds = 6
-
-# Flip this on if I need to debug the subprocess.
-# It messes with some other sys.settrace options, so I only want the debugger
-# to activate in subprocesses when I specifically tell it to.
-debug_subprocess_mode = False
 
 # Path to the directory containing this file
 CURRENT_DIR = os.path.dirname(__file__)
