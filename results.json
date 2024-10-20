@@ -1,0 +1,172 @@
+{
+    "tests": [
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_01_welcome_message.py::test_01_welcome_message",
+            "output": "First time running tests/test_01_welcome_message.py::test_01_welcome_message\n('Diego',)\r\nHello Diego, welcome to IS 303!\r\n('Mai',)\r\nHello Mai, welcome to IS 303!\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_02_sum_two_numbers.py::test_02_sum_two_numbers",
+            "output": "First time running tests/test_02_sum_two_numbers.py::test_02_sum_two_numbers\n(1, 1)\r\n(-3, 7)\r\n(2000, 42)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_03_is_even.py::test_03_is_even",
+            "output": "First time running tests/test_03_is_even.py::test_03_is_even\n(1,)\r\n(-3,)\r\n(64,)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_04_get_number_parity.py::test_04_get_number_parity",
+            "output": "First time running tests/test_04_get_number_parity.py::test_04_get_number_parity\n(1,)\r\n(-3,)\r\n(64,)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_05_fahrenheit_to_celsius.py::test_05_fahrenheit_to_celsius",
+            "output": "First time running tests/test_05_fahrenheit_to_celsius.py::test_05_fahrenheit_to_celsius\n(32,)\r\n(122,)\r\n(-13,)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_06_min_max_mean.py::test_06_min_max_mean",
+            "output": "First time running tests/test_06_min_max_mean.py::test_06_min_max_mean\n([1, 2, 3],)\r\n([354, 87, -7, 92, 34],)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_07_dog_message.py::test_07_dog_message",
+            "output": "First time running tests/test_07_dog_message.py::test_07_dog_message\n('Jet',)\r\n('Poof', 92)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_08_classify_age.py::test_08_classify_age",
+            "output": "First time running tests/test_08_classify_age.py::test_08_classify_age\n(18,)\r\n(1, 78)\r\n(70,)\r\n(70, 75)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_09_calculate_total.py::test_09_calculate_total",
+            "output": "First time running tests/test_09_calculate_total.py::test_09_calculate_total\n(10, 9, 0.3)\r\n(10, 11, 0.3)\r\n(10, 11, 0.3, 120)\r\n(10, 11, 0.3, 90, 0.5)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_10_input_prompts.py::test_10_input_prompts",
+            "output": "First time running tests/test_10_input_prompts.py::test_10_input_prompts\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_11_printed_messages.py::test_11_printed_messages",
+            "output": "First time running tests/test_11_printed_messages.py::test_11_printed_messages\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_12_sufficient_comments.py::test_12_sufficient_comments",
+            "output": "First time running tests/test_12_sufficient_comments.py::test_12_sufficient_comments\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_01_welcome_message.py::test_01_welcome_message",
+            "output": "tests/test_01_welcome_message.py::test_01_welcome_message has already been run in this session\n('Diego',)\r\nHello Diego, welcome to IS 303!\r\n('Mai',)\r\nHello Mai, welcome to IS 303!\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_02_sum_two_numbers.py::test_02_sum_two_numbers",
+            "output": "tests/test_02_sum_two_numbers.py::test_02_sum_two_numbers has already been run in this session\n(1, 1)\r\n(-3, 7)\r\n(2000, 42)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_03_is_even.py::test_03_is_even",
+            "output": "tests/test_03_is_even.py::test_03_is_even has already been run in this session\n(1,)\r\n(-3,)\r\n(64,)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_04_get_number_parity.py::test_04_get_number_parity",
+            "output": "tests/test_04_get_number_parity.py::test_04_get_number_parity has already been run in this session\n(1,)\r\n(-3,)\r\n(64,)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_05_fahrenheit_to_celsius.py::test_05_fahrenheit_to_celsius",
+            "output": "tests/test_05_fahrenheit_to_celsius.py::test_05_fahrenheit_to_celsius has already been run in this session\n(32,)\r\n(122,)\r\n(-13,)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_06_min_max_mean.py::test_06_min_max_mean",
+            "output": "tests/test_06_min_max_mean.py::test_06_min_max_mean has already been run in this session\n([1, 2, 3],)\r\n([354, 87, -7, 92, 34],)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_07_dog_message.py::test_07_dog_message",
+            "output": "tests/test_07_dog_message.py::test_07_dog_message has already been run in this session\n('Jet',)\r\n('Poof', 92)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_08_classify_age.py::test_08_classify_age",
+            "output": "tests/test_08_classify_age.py::test_08_classify_age has already been run in this session\n(18,)\r\n(1, 78)\r\n(70,)\r\n(70, 75)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_09_calculate_total.py::test_09_calculate_total",
+            "output": "tests/test_09_calculate_total.py::test_09_calculate_total has already been run in this session\n(10, 9, 0.3)\r\n(10, 11, 0.3)\r\n(10, 11, 0.3, 120)\r\n(10, 11, 0.3, 90, 0.5)\r\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_10_input_prompts.py::test_10_input_prompts",
+            "output": "tests/test_10_input_prompts.py::test_10_input_prompts has already been run in this session\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_11_printed_messages.py::test_11_printed_messages",
+            "output": "tests/test_11_printed_messages.py::test_11_printed_messages has already been run in this session\n\n",
+            "visibility": "visible"
+        },
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_12_sufficient_comments.py::test_12_sufficient_comments",
+            "output": "tests/test_12_sufficient_comments.py::test_12_sufficient_comments has already been run in this session\n\n",
+            "visibility": "visible"
+        }
+    ]
+}
